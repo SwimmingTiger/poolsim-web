@@ -19,6 +19,10 @@ try {
         $tpl->assign('actionResult', '修改成功');
 
         $tpl->display('tpl:action_result');
+
+        $service = new SimService($config);
+        $service->stopService();
+        $service->startService();
     }
     else {
         $meta = new MetaData('pool_server');
