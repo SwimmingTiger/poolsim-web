@@ -5,7 +5,7 @@
     }
 </style>
 <div id="title" class="tp">
-    <h3>矿机模拟器管理面板 | <a href="{$cid}.add.{$BID}">新增</a> | <a href="?r={time()}">刷新</a></h3>
+    <h3>矿机模拟器管理面板 | <a href="{$cid}.add.{$BID}">新增</a> | <a href="?r={time()}">刷新</a><a style="float:right" href="login.exit.{$BID}">退出</a></h3>
 </div>
 <div id="poolsim_list"><table>
     <tr>
