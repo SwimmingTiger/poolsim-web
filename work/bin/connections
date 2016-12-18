@@ -1,0 +1,2 @@
+#!/bin/sh
+netstat -ntp | grep "ESTABLISHED\\s\\+$1/poolsim" | wc -l
