@@ -1,4 +1,5 @@
 <?php
+Admin::checkLogin();
 $tpl = $PAGE->start();
 
 $id = (int) $_GET['id'];

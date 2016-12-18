@@ -1,4 +1,5 @@
 <?php
+Admin::checkLogin();
 $tpl = $PAGE->start();
 
 try {
