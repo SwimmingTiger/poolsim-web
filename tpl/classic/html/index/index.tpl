@@ -32,7 +32,7 @@
             <td>
                 <a href="{$CID}.start.{$BID}?id={$service->id|code}">启</a>
                 <a href="{$CID}.stop.{$BID}?id={$service->id|code}">停</a>
-                <a href="{$CID}.edit.{$BID}?id={$service->id|code}">改</a>
+                <a href="{$CID}.edit.{$BID}?id={$service->id|code}{if $service->isCustomPool}&custom_pool=1{/if}">改</a>
                 <a href="{$CID}.delete.{$BID}?id={$service->id|code}" onclick="return confirm('确定删除？')">删</a>
             </td>
         </tr>

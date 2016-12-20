@@ -8,11 +8,17 @@
     <form action="{$CID}.{$PID}.{$BID}" method="post">
         <p>
             矿池：
+            {if $smarty.get.custom_pool}
+                <input type="text" name="pool" value="{$smarty.post.pool|code}" />
+                <a href="?custom_pool=0">预定义</a>
+            {else}
             <select name="pool">
                 {foreach $poolList as $name=>$address}
                     <option value="{$address|code}">{$name|code}</option>
                 {/foreach}
             </select>
+            <a href="?custom_pool=1">自定义</a>
+            {/if}
         </p>
         <p>子账户名：<input type="text" name="username" value="{$smarty.post.username|code}" /></p>
         <p>矿机数：<input type="text" name="number" value="{$smarty.post.number|code}" /></p>

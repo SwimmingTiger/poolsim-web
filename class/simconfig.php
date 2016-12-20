@@ -27,14 +27,14 @@ class SimConfig {
     }
 
     public function setStratumServer($ip, $port) {
-        if (strlen($ip) < 1) {
-            throw new SimConfigException('矿池IP不能为空');
-        }
-        
         if ($port < 1 || $port > 65535) {
             throw new SimConfigException('矿池端口应在1到65535之间');
         }
 
+        if (strlen($ip) < 1) {
+            throw new SimConfigException('矿池IP不能为空');
+        }
+        
         $this->ss_ip = trim($ip);
         $this->ss_port = (int)$port;
     }

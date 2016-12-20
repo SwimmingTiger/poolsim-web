@@ -128,8 +128,15 @@ class str
     //拆分地址和端口
     public static function splitHostAndPort($hostAndPort) {
         $pos = strrpos($hostAndPort, ':');
-        $host = substr($hostAndPort, 0, $pos);
-        $port = substr($hostAndPort, $pos + 1);
+
+        if ($pos === false) {
+            $host = $hostAndPort;
+            $port = '';
+        }
+        else {
+            $host = substr($hostAndPort, 0, $pos);
+            $port = substr($hostAndPort, $pos + 1);
+        }
 
         return ['host'=>$host, 'port'=>$port];
     }

@@ -32,7 +32,15 @@ $serviceList = [];
 foreach ($configList as $config) {
     $service = new SimService($config);
     $service->status = $service->getCountData();
-    $service->poolName = $meta->key($x=$service->config->ss_ip.':'.$service->config->ss_port);
+    
+    $address = $service->config->ss_ip.':'.$service->config->ss_port;
+
+    $service->poolName = $meta->key($address);
+
+    if ($service->poolName === NULL) {
+        $service->poolName = $address;
+        $service->isCustomPool = true;
+    }
 
     $serviceList[] = $service;
 }
