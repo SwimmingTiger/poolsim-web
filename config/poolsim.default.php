@@ -10,3 +10,5 @@ define(POOLSIM_DAEMON_CONF_DIR, POOLSIM_ROOT_DIR . '/daemon');
 
 define(POOLSIM_PROCESS_PATH, POOLSIM_BIN_DIR . '/poolsim');
 define(POOLSIM_CONNECTION_LOOKUP, POOLSIM_BIN_DIR . '/connections');
+
+define(POOLSIM_RUNNING_USER, 'www-data');

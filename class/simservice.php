@@ -31,6 +31,7 @@ class SimService {
     public function makeDaemonConfig() {
         $workDir = POOLSIM_ROOT_DIR;
         $process = POOLSIM_PROCESS_PATH;
+		$user = POOLSIM_RUNNING_USER;
 
         $conf = <<<CONF
 [program:poolsim-{$this->id}]
@@ -40,7 +41,7 @@ autostart=true
 autorestart=true
 startsecs=3
 startretries=100
-user=www-data
+user={$user}
 redirect_stderr=true
 stdout_logfile_backups=5
 stdout_logfile={$this->logDir}/stdout.log
