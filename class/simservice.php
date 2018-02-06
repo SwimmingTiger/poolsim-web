@@ -136,7 +136,7 @@ CONF;
             $data['status'] = 'RUNNING';
 
             preg_match('/pid\s*(\d+)/i', $status, $pid);
-            preg_match('/uptime\s*([0-9:]+)/i', $status, $uptime);
+            preg_match('/uptime\s*(.*)$/i', $status, $uptime);
 
             $data['pid'] = $pid[1];
             $data['uptime'] = $uptime[1];
